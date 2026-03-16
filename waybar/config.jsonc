@@ -1,0 +1,59 @@
+{
+  "layer": "top",
+  "position": "top",
+  "exclusive": true,
+  "modules-left": [
+    "hyprland/workspaces",
+    "clock"
+  ],
+  "modules-center": [],
+  "modules-right": [
+    "cpu",
+    "memory",
+    "network",
+    "backlight",
+    "pulseaudio",
+    "battery"
+  ],
+  "hyprland/workspaces": {
+    "format": "{name}"
+  },
+  "clock": {
+    "format": "\uf017  {:%a %d %b %H:%M}"
+  },
+  "cpu": {
+      "format": "\uf4bc  {usage}%",
+      "interval": 2
+  },
+  "memory": {
+    "format": "\uf1c0  {used:0.1f}/{total:0.1f}G",
+    "interval": 5,
+    "states": {
+        "warning": 75,
+        "critical": 90
+    }
+  },
+  "backlight": {
+      "device": "intel_backlight",
+      "format": "\uf0eb  {percent}%"
+  },
+  "pulseaudio": {
+    "format": "󰕾  {volume}%",
+    "format-muted": "\ufa80  muted"
+  },
+  "network": {
+      "format-wifi": "\uf1eb  {signalStrength}%",
+      "format-ethernet": "\uf6ff  {ipaddr}",
+      "format-linked": "\uf6ff  no IP",
+      "format-disconnected": "\uf127  off",
+      "tooltip-format": "{essid}\n{ifname}\n{ipaddr}",
+      "on-click": "nm-connection-editor"
+  },
+  "battery": {
+      "bat": "BAT0",
+      "format": "\uf241  {capacity}%",
+      "format-charging": "\uf0e7  {capacity}%",
+      "format-plugged": "\uf1e6  {capacity}%",
+      "format-full": "\uf240  100%"
+  }
+}
